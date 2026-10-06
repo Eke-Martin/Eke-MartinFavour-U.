@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="MA-ROYAL Real Estate concept preview">
+  <rect width="1200" height="800" fill="#0c1220"/>
+  <rect x="80" y="90" width="1040" height="620" rx="18" fill="#101522" stroke="#252C3A"/>
+  <rect x="80" y="90" width="1040" height="72" fill="#0a0f1a"/>
+  <circle cx="122" cy="126" r="8" fill="#F5B942"/>
+  <rect x="160" y="116" width="220" height="20" rx="4" fill="#252C3A"/>
+  <rect x="120" y="200" width="480" height="280" rx="12" fill="#161d2e"/>
+  <polygon points="120,420 280,300 420,380 600,240 600,480 120,480" fill="#F5B942" opacity="0.18"/>
+  <rect x="640" y="200" width="420" height="70" rx="8" fill="#1b2438"/>
+  <rect x="640" y="290" width="420" height="14" rx="4" fill="#252C3A"/>
+  <rect x="640" y="320" width="300" height="14" rx="4" fill="#252C3A"/>
+  <rect x="640" y="370" width="180" height="44" rx="8" fill="#F5B942"/>
+  <rect x="120" y="520" width="300" height="140" rx="12" fill="#161d2e"/>
+  <rect x="450" y="520" width="300" height="140" rx="12" fill="#161d2e"/>
+  <rect x="780" y="520" width="280" height="140" rx="12" fill="#161d2e"/>
+  <text x="600" y="760" text-anchor="middle" fill="#A5ADBD" font-family="Inter, sans-serif" font-size="22">Concept preview  replace with screenshot</text>
+</svg>

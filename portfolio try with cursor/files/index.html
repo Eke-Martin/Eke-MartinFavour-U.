@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!---===================== TITLE ====================--->
+    <title>Eke MartinFavour U. | Front-End Engineer</title>
+    <meta
+      name="description"
+      content="Portfolio of Eke MartinFavour U., a Front-End Engineer, Forex Trader, CEO, Real Estate Consultant, and Entrepreneur based in Owerri, Imo State, Nigeria."
+    />
+    <meta name="author" content="Eke MartinFavour U." />
+    <meta property="og:title" content="Eke MartinFavour U. | Front-End Engineer" />
+    <meta
+      property="og:description"
+      content="Premium portfolio for a multifaceted professional in technology, markets, and business."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/profile-placeholder.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!---=================== TAILWIND CSS =====================--->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Space Grotesk", "system-ui", "sans-serif"],
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+            colors: {
+              midnight: "#080B12",
+              navy: "#101522",
+              gold: "#F5B942",
+              champagne: "#E9C46A",
+              muted: "#A5ADBD",
+              line: "#252C3A",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!---============== STYLE CSS =====================--->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!---============== FONT AWESOME (social icons) =====================--->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  </head>
+
+  <!---================== HEADER / HOME ===================--->
+  <body>
+    <a class="skip-link" href="#home">Skip to content</a>
+    <div id="scroll-progress" aria-hidden="true"></div>
+    <div class="ambient" data-parallax="0.04" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
+    <header id="site-nav" class="nav-bar">
+      <div class="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <a href="#home" class="flex items-center gap-3" aria-label="Eke MartinFavour U. home">
+          <span class="logo-mark">EM</span>
+          <span class="hidden font-display text-sm font-semibold tracking-wide sm:inline">Eke MartinFavour U.</span>
+        </a>
+        <nav class="hidden items-center gap-8 lg:flex" aria-label="Primary">
+          <a class="nav-link is-active" data-nav-link href="#home">Home</a>
+          <a class="nav-link" data-nav-link href="#about">About</a>
+          <a class="nav-link" data-nav-link href="#services">Services</a>
+          <a class="nav-link" data-nav-link href="#resume">Resume</a>
+          <a class="nav-link" data-nav-link href="#portfolio">Portfolio</a>
+          <a class="btn btn-gold" data-nav-link href="#hire">Hire Me</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button
+            type="button"
+            class="grid h-10 w-10 place-items-center rounded-full border border-line text-gold"
+            data-theme-toggle
+            aria-label="Switch to light mode"
+          >
+            <i data-lucide="sun" data-theme-icon="light" class="hidden h-4 w-4"></i>
+            <i data-lucide="moon" data-theme-icon="dark" class="h-4 w-4"></i>
+          </button>
+          <button
+            id="nav-toggle"
+            type="button"
+            class="grid h-10 w-10 place-items-center rounded-full border border-line lg:hidden"
+            aria-controls="mobile-panel"
+            aria-expanded="false"
+            aria-label="Open menu"
+          >
+            <i data-lucide="menu" class="h-5 w-5"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div id="nav-overlay" class="overlay fixed inset-0 z-40 bg-black/50 lg:hidden"></div>
+    <aside
+      id="mobile-panel"
+      class="mobile-panel fixed right-0 top-0 z-50 flex h-full w-[82%] max-w-sm flex-col gap-6 border-l border-line bg-navy p-8 lg:hidden"
+      aria-label="Mobile menu"
+    >
+      <div class="flex items-center justify-between">
+        <span class="font-display font-semibold">Menu</span>
+        <button id="nav-close" type="button" class="text-muted" aria-label="Close menu">
+          <i data-lucide="x" class="h-5 w-5"></i>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-4 text-lg">
+        <a data-nav-link href="#home">Home</a>
+        <a data-nav-link href="#about">About</a>
+        <a data-nav-link href="#services">Services</a>
+        <a data-nav-link href="#resume">Resume</a>
+        <a data-nav-link href="#portfolio">Portfolio</a>
+        <a class="btn btn-gold mt-2" data-nav-link href="#hire">Hire Me</a>
+      </nav>
+    </aside>
+
+    <div class="site-content">
+      <main>
+        <section id="home" class="relative min-h-screen overflow-hidden pt-28 lg:pt-32">
+          <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 pb-24 sm:px-6 lg:grid-cols-2 lg:px-8">
+            <div class="hero-copy is-in">
+              <p class="section-kicker">HELLO, I'M</p>
+              <h1 class="mt-4 font-display text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+                Eke <span class="gold-text">MartinFavour</span> U.
+              </h1>
+              <p class="mt-5 font-display text-xl text-gold sm:text-2xl">
+                <span id="role-text" class="role-swap" data-roles='["Front-End Engineer","Forex Trader","CEO","Real Estate Consultant","Entrepreneur"]'>Front-End Engineer</span>
+              </p>
+              <p class="mt-6 max-w-xl text-muted">
+                Welcome to my portfolio! I’m a multifaceted professional with a passion for technology, financial markets, and web development.
+              </p>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <a class="btn btn-gold" href="#about">Feel Free to Explore</a>
+                <a id="download-cv" class="btn btn-outline" href="#resume" download>Download CV</a>
+              </div>
+              <p id="cv-hint" class="mt-3 text-xs text-muted"></p>
+            </div>
+
+            <div class="reveal-scale relative mx-auto w-full max-w-md">
+              <div class="hero-orbit" aria-hidden="true"></div>
+              <div class="hero-orbit hero-orbit-2" aria-hidden="true"></div>
+              <div class="portrait-frame float-slow relative z-10">
+                <img
+                  src="assets/images/profile-placeholder.svg"
+                  alt="Replaceable portrait placeholder for Eke MartinFavour U."
+                  width="640"
+                  height="800"
+                />
+              </div>
+            </div>
+          </div>
+          <a href="#about" class="scroll-hint mx-auto mb-10 flex w-max flex-col items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted">
+            Scroll
+            <i data-lucide="chevron-down" class="h-4 w-4 text-gold"></i>
+          </a>
+        </section>
+
+        <section id="about" class="py-24">
+          <div class="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+            <div class="reveal-left relative">
+              <div class="portrait-frame max-w-md">
+                <img
+                  src="assets/images/about-placeholder.svg"
+                  alt="Replaceable about-section portrait placeholder for Eke MartinFavour U."
+                  width="720"
+                  height="900"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div class="reveal-right">
+              <p class="section-kicker">ABOUT ME</p>
+              <h2 class="mt-3 font-display text-3xl font-bold sm:text-4xl">A Bit About <span class="text-gold">Me</span></h2>
+              <p class="mt-6 text-muted">
+                I'm Eke MartinFavour U., a Front-End Engineer, Forex Trader, Entrepreneur, CEO, and Real Estate Consultant. I combine technology, financial knowledge, and business innovation to create opportunities, develop digital solutions, and solve real-world problems.
+              </p>
+              <p class="mt-4 text-muted">
+                I am passionate about continuous learning, building meaningful projects, exploring financial markets, and creating opportunities through entrepreneurship.
+              </p>
+              <ul class="mt-8 grid gap-4 sm:grid-cols-2">
+                <li class="flex gap-3">
+                  <i data-lucide="user" class="icon-gold mt-1 h-5 w-5"></i>
+                  <div>
+                    <p class="text-xs uppercase tracking-wider text-muted">Name</p>
+                    <p>Eke MartinFavour U.</p>
+                  </div>
+                </li>
+                <li class="flex gap-3">
+                  <i data-lucide="map-pin" class="icon-gold mt-1 h-5 w-5"></i>
+                  <div>
+                    <p class="text-xs uppercase tracking-wider text-muted">Location</p>
+                    <p>Owerri, Imo State, Nigeria</p>
+                  </div>
+                </li>
+                <li class="flex gap-3">
+                  <i data-lucide="briefcase" class="icon-gold mt-1 h-5 w-5"></i>
+                  <div>
+                    <p class="text-xs uppercase tracking-wider text-muted">Profession</p>
+                    <p>Front-End Engineer</p>
+                  </div>
+                </li>
+                <li class="flex gap-3">
+                  <i data-lucide="sparkles" class="icon-gold mt-1 h-5 w-5"></i>
+                  <div>
+                    <p class="text-xs uppercase tracking-wider text-muted">Interests</p>
+                    <p>Technology, Forex Trading, Real Estate, Business, Entrepreneurship</p>
+                  </div>
+                </li>
+              </ul>
+              <div class="stagger mt-8 grid gap-4 sm:grid-cols-2">
+                <article class="glass-card p-5">
+                  <i data-lucide="code-2" class="icon-gold h-6 w-6"></i>
+                  <h3 class="mt-3 font-display font-semibold">Technology &amp; Web Development</h3>
+                </article>
+                <article class="glass-card p-5">
+                  <i data-lucide="line-chart" class="icon-gold h-6 w-6"></i>
+                  <h3 class="mt-3 font-display font-semibold">Financial Markets &amp; Forex Trading</h3>
+                </article>
+                <article class="glass-card p-5">
+                  <i data-lucide="rocket" class="icon-gold h-6 w-6"></i>
+                  <h3 class="mt-3 font-display font-semibold">Entrepreneurship &amp; Business</h3>
+                </article>
+                <article class="glass-card p-5">
+                  <i data-lucide="building-2" class="icon-gold h-6 w-6"></i>
+                  <h3 class="mt-3 font-display font-semibold">Real Estate &amp; Investment</h3>
+                </article>
+              </div>
+              <a class="btn btn-gold mt-8" href="#services">Learn More</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="services" class="py-24">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="reveal mx-auto max-w-2xl text-center">
+              <p class="section-kicker">WHAT I DO</p>
+              <h2 class="mt-3 font-display text-3xl font-bold sm:text-4xl">My Services</h2>
+              <p class="mt-4 text-muted">
+                Providing innovative solutions, professional expertise, and reliable services to help individuals and businesses achieve their goals.
+              </p>
+            </div>
+            <div class="stagger mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              <article class="glass-card flex h-full flex-col p-7">
+                <i data-lucide="code-2" class="icon-gold h-10 w-10"></i>
+                <h3 class="mt-5 font-display text-xl font-semibold">Front-End Engineer</h3>
+                <p class="mt-3 text-sm text-muted">
+                  I build modern, responsive, interactive, and user-friendly websites and web applications using modern front-end technologies.
+                </p>
+              </article>
+              <article class="glass-card flex h-full flex-col p-7">
+                <i data-lucide="trending-up" class="icon-gold h-10 w-10"></i>
+                <h3 class="mt-5 font-display text-xl font-semibold">Forex Trader</h3>
+                <p class="mt-3 text-sm text-muted">
+                  I analyze financial markets, study price movements, and apply structured trading strategies to identify potential opportunities while managing risk.
+                </p>
+              </article>
+              <article class="glass-card flex h-full flex-col p-7">
+                <i data-lucide="crown" class="icon-gold h-10 w-10"></i>
+                <h3 class="mt-5 font-display text-xl font-semibold">CEO</h3>
+                <p class="mt-3 text-sm text-muted">
+                  I lead business initiatives, develop strategic plans, drive innovation, and create opportunities for sustainable business growth.
+                </p>
+              </article>
+              <article class="glass-card flex h-full flex-col p-7">
+                <i data-lucide="building-2" class="icon-gold h-10 w-10"></i>
+                <h3 class="mt-5 font-display text-xl font-semibold">Real Estate Consultant</h3>
+                <p class="mt-3 text-sm text-muted">
+                  I assist clients with property sales, rentals, investment opportunities, property marketing, and real estate consultancy.
+                </p>
+              </article>
+              <article class="glass-card flex h-full flex-col p-7">
+                <i data-lucide="lightbulb" class="icon-gold h-10 w-10"></i>
+                <h3 class="mt-5 font-display text-xl font-semibold">Entrepreneur</h3>
+                <p class="mt-3 text-sm text-muted">
+                  I transform ideas into business opportunities, explore innovative solutions, and build ventures focused on growth and long-term impact.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="resume" class="py-24">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="reveal mx-auto max-w-2xl text-center">
+              <p class="section-kicker">MY JOURNEY</p>
+              <h2 class="mt-3 font-display text-3xl font-bold sm:text-4xl">Resume</h2>
+              <p class="mt-3 text-sm text-muted">Dates, employment status, and skill levels are editable placeholders — not independently verified claims.</p>
+            </div>
+            <div class="mt-14 grid gap-6 lg:grid-cols-3">
+              <article class="glass-card reveal p-7">
+                <h3 class="font-display text-xl font-semibold text-gold">Experience</h3>
+                <ol class="timeline mt-8 space-y-8 pl-1">
+                  <li class="flex gap-4">
+                    <span class="timeline-dot"></span>
+                    <div>
+                      <p class="text-xs text-gold" data-editable-date>Present · configurable date</p>
+                      <h4 class="font-semibold">Front-End Engineer</h4>
+                      <p class="text-sm text-muted">Freelance and Personal Projects</p>
+                      <ul class="mt-2 list-disc pl-4 text-sm text-muted">
+                        <li>Web development using HTML, CSS, JavaScript, React, and Next.js</li>
+                        <li>Responsive website development</li>
+                        <li>API integration and modern UI development</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="flex gap-4">
+                    <span class="timeline-dot"></span>
+                    <div>
+                      <p class="text-xs text-gold">Present · configurable date</p>
+                      <h4 class="font-semibold">Entrepreneur</h4>
+                      <p class="text-sm text-muted">Business Development</p>
+                      <ul class="mt-2 list-disc pl-4 text-sm text-muted">
+                        <li>Exploring and developing business ideas</li>
+                        <li>Digital innovation</li>
+                        <li>Business strategy and growth</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="flex gap-4">
+                    <span class="timeline-dot"></span>
+                    <div>
+                      <p class="text-xs text-gold">Present · configurable date</p>
+                      <h4 class="font-semibold">CEO / Real Estate Consultant</h4>
+                      <p class="text-sm text-muted">MA-INTELLI TECHNOLOGIES</p>
+                      <p class="text-sm text-muted">MA-ROYAL REAL ESTATE AND AIRBNB PROPERTIES LTD.</p>
+                      <p class="mt-2 text-sm text-muted">Business development, digital solutions, property marketing, and real estate consultancy.</p>
+                    </div>
+                  </li>
+                </ol>
+              </article>
+
+              <article class="glass-card reveal p-7">
+                <h3 class="font-display text-xl font-semibold text-gold">Education</h3>
+                <ol class="timeline mt-8 space-y-8 pl-1">
+                  <li class="flex gap-4">
+                    <span class="timeline-dot"></span>
+                    <div>
+                      <p class="text-xs text-gold">Year of study: configurable</p>
+                      <h4 class="font-semibold">Imo State University</h4>
+                      <p class="text-sm text-muted">B.Sc. Computer Science</p>
+                      <p class="text-sm text-muted">Level: 400 Level · Status: Finals</p>
+                    </div>
+                  </li>
+                  <li class="flex gap-4">
+                    <span class="timeline-dot"></span>
+                    <div>
+                      <p class="text-xs text-gold">Placeholder</p>
+                      <h4 class="font-semibold">Secondary School</h4>
+                      <p class="text-sm text-muted">Institution name, qualification, and year — add confirmed details here.</p>
+                    </div>
+                  </li>
+                  <li class="flex gap-4">
+                    <span class="timeline-dot"></span>
+                    <div>
+                      <p class="text-xs text-gold">Placeholder</p>
+                      <h4 class="font-semibold">Primary School</h4>
+                      <p class="text-sm text-muted">Institution name and year — add confirmed details here.</p>
+                    </div>
+                  </li>
+                </ol>
+              </article>
+
+              <article class="glass-card reveal p-7" data-skills>
+                <h3 class="font-display text-xl font-semibold text-gold">Skills</h3>
+                <p id="skills-note" class="mt-2 text-xs text-muted"></p>
+                <h4 class="mt-6 text-sm font-semibold uppercase tracking-wider">Technical Skills</h4>
+                <div id="skills-technical" class="mt-4 space-y-4"></div>
+                <h4 class="mt-8 text-sm font-semibold uppercase tracking-wider">Professional Skills</h4>
+                <div id="skills-professional" class="mt-4 space-y-4"></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="portfolio" class="py-24">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="reveal mx-auto max-w-2xl text-center">
+              <p class="section-kicker">MY WORKS</p>
+              <h2 class="mt-3 font-display text-3xl font-bold sm:text-4xl">My Recent Works</h2>
+              <p class="mt-4 text-muted">Here are some of my recent projects, experiments, and professional work.</p>
+            </div>
+            <div class="mt-10 flex flex-wrap justify-center gap-2" role="group" aria-label="Filter projects">
+              <button class="filter-btn is-active" data-filter="all" aria-pressed="true">All</button>
+              <button class="filter-btn" data-filter="websites" aria-pressed="false">Websites</button>
+              <button class="filter-btn" data-filter="web-apps" aria-pressed="false">Web Apps</button>
+              <button class="filter-btn" data-filter="business" aria-pressed="false">Business</button>
+              <button class="filter-btn" data-filter="other" aria-pressed="false">Other</button>
+            </div>
+            <p id="portfolio-empty" class="mt-10 hidden text-center text-sm text-muted">No projects in this category yet. Add items in index.html when they are ready.</p>
+            <div class="stagger mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              <article class="glass-card project-card" data-category="websites business">
+                <div class="thumb">
+                  <img src="assets/images/project-real-estate.svg" alt="Concept preview for MA-ROYAL Real Estate platform" loading="lazy" width="1200" height="800" />
+                </div>
+                <div class="p-6">
+                  <p class="text-xs uppercase tracking-wider text-gold">Website · Concept</p>
+                  <h3 class="mt-2 font-display text-xl font-semibold">MA-ROYAL Real Estate</h3>
+                  <p class="mt-2 text-sm text-muted">A real estate platform concept designed to showcase properties, support property discovery, and connect buyers, sellers, and investors.</p>
+                  <p class="mt-3 text-xs text-muted">HTML · CSS · JavaScript</p>
+                  <div class="mt-5 flex gap-3">
+                    <span class="btn btn-outline px-4 py-2 text-xs opacity-60">Live Demo unavailable</span>
+                    <span class="btn btn-outline px-4 py-2 text-xs opacity-60">Source pending</span>
+                  </div>
+                </div>
+              </article>
+              <article class="glass-card project-card" data-category="web-apps">
+                <div class="thumb">
+                  <img src="assets/images/project-forex.svg" alt="Concept preview for a forex trading dashboard" loading="lazy" width="1200" height="800" />
+                </div>
+                <div class="p-6">
+                  <p class="text-xs uppercase tracking-wider text-gold">Web App · Concept</p>
+                  <h3 class="mt-2 font-display text-xl font-semibold">Forex Trading Dashboard</h3>
+                  <p class="mt-2 text-sm text-muted">A financial market dashboard concept for viewing market movements, trading insights, technical indicators, and price trends.</p>
+                  <p class="mt-3 text-xs text-muted">JavaScript · Charts · UI</p>
+                  <div class="mt-5 flex gap-3">
+                    <span class="btn btn-outline px-4 py-2 text-xs opacity-60">Live Demo unavailable</span>
+                    <span class="btn btn-outline px-4 py-2 text-xs opacity-60">Source pending</span>
+                  </div>
+                </div>
+              </article>
+              <article class="glass-card project-card" data-category="web-apps">
+                <div class="thumb">
+                  <img src="assets/images/project-fintech.svg" alt="Concept preview for Malltipay fintech interface" loading="lazy" width="1200" height="800" />
+                </div>
+                <div class="p-6">
+                  <p class="text-xs uppercase tracking-wider text-gold">Web App · Concept</p>
+                  <h3 class="mt-2 font-display text-xl font-semibold">Malltipay Fintech UI</h3>
+                  <p class="mt-2 text-sm text-muted">A modern fintech application concept featuring a clean interface for digital payments, transfers, and financial management.</p>
+                  <p class="mt-3 text-xs text-muted">React · Tailwind</p>
+                  <div class="mt-5 flex gap-3">
+                    <span class="btn btn-outline px-4 py-2 text-xs opacity-60">Live Demo unavailable</span>
+                    <span class="btn btn-outline px-4 py-2 text-xs opacity-60">Source pending</span>
+                  </div>
+                </div>
+              </article>
+              <article class="glass-card project-card" data-category="web-apps">
+                <div class="thumb">
+                  <img src="assets/images/project-school.svg" alt="Concept preview for a school management dashboard" loading="lazy" width="1200" height="800" />
+                </div>
+                <div class="p-6">
+                  <p class="text-xs uppercase tracking-wider text-gold">Web App · Concept</p>
+                  <h3 class="mt-2 font-display text-xl font-semibold">School Management Dashboard</h3>
+                  <p class="mt-2 text-sm text-muted">A school management platform concept for managing student information, academic records, results, and administrative workflows.</p>
+                  <p class="mt-3 text-xs text-muted">Next.js · Dashboard UI</p>
+                  <div class="mt-5 flex gap-3">
+                    <span class="btn btn-outline px-4 py-2 text-xs opacity-60">Live Demo unavailable</span>
+                    <span class="btn btn-outline px-4 py-2 text-xs opacity-60">Source pending</span>
+                  </div>
+                </div>
+              </article>
+              <article class="glass-card project-card" data-category="web-apps">
+                <div class="thumb">
+                  <img src="assets/images/project-ai.svg" alt="Concept preview for an AI real estate assistant" loading="lazy" width="1200" height="800" />
+                </div>
+                <div class="p-6">
+                  <p class="text-xs uppercase tracking-wider text-gold">Web App · Concept</p>
+                  <h3 class="mt-2 font-display text-xl font-semibold">AI Real Estate Assistant</h3>
+                  <p class="mt-2 text-sm text-muted">An AI-powered real estate assistant concept designed to answer customer inquiries, provide property information, and streamline communication.</p>
+                  <p class="mt-3 text-xs text-muted">AI UI · Conversational design</p>
+                  <div class="mt-5 flex gap-3">
+                    <span class="btn btn-outline px-4 py-2 text-xs opacity-60">Live Demo unavailable</span>
+                    <span class="btn btn-outline px-4 py-2 text-xs opacity-60">Source pending</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="hire" class="py-24">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="reveal mx-auto max-w-3xl text-center">
+              <p class="section-kicker">LET'S WORK TOGETHER</p>
+              <h2 class="mt-3 font-display text-3xl font-bold sm:text-4xl">Have a Project in Mind? Let's Build Something Great.</h2>
+              <p class="mt-4 text-muted">
+                I'm always open to meaningful collaborations, exciting projects, and opportunities to create innovative solutions. Let's connect and bring your ideas to life.
+              </p>
+            </div>
+            <div class="mt-14 grid gap-8 lg:grid-cols-5">
+              <div class="reveal-left glass-card p-8 lg:col-span-2">
+                <h3 class="font-display text-xl font-semibold">Contact details</h3>
+                <ul class="mt-6 space-y-5">
+                  <li class="flex gap-3">
+                    <i data-lucide="user" class="icon-gold h-5 w-5"></i>
+                    <span>Eke MartinFavour U.</span>
+                  </li>
+                  <li class="flex gap-3">
+                    <i data-lucide="mail" class="icon-gold h-5 w-5"></i>
+                    <a id="contact-email" class="hover:text-gold" href="mailto:ekemartinudochukwu4@gmail.com">ekemartinudochukwu4@gmail.com</a>
+                  </li>
+                  <li class="flex gap-3">
+                    <i data-lucide="map-pin" class="icon-gold h-5 w-5"></i>
+                    <span>Owerri, Imo State, Nigeria</span>
+                  </li>
+                  <li class="flex gap-3">
+                    <i data-lucide="phone" class="icon-gold h-5 w-5"></i>
+                    <a class="hover:text-gold" href="tel:+2348106153316">+234 810 615 3316</a>
+                  </li>
+                </ul>
+                <div class="mt-8">
+                  <p class="mb-3 text-xs uppercase tracking-wider text-muted">Connect with me</p>
+                  <div class="social-icons">
+                    <a data-social="linkedin" href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a data-social="instagram" href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a data-social="x" href="#" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a data-social="github" href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a data-social="tiktok" href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                  </div>
+                </div>
+              </div>
+              <form id="contact-form" action="https://formsubmit.co/ajax/ekemartinudochukwu4@gmail.com" method="POST" class="reveal-right glass-card p-8 lg:col-span-3" novalidate>
+                <!-- Delivery settings: first email is in the action URL, second receives a copy -->
+                <input type="hidden" name="_cc" value="maintellitechnologies@gmail.com">
+                <input type="hidden" name="_subject" value="New Portfolio Inquiry - Portfolio Website">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                <div class="grid gap-5 sm:grid-cols-2">
+                  <div class="form-field">
+                    <label for="full-name" class="mb-2 block text-sm">Full Name</label>
+                    <input id="full-name" name="name" type="text" autocomplete="name" required />
+                    <p class="form-error" data-error="name"></p>
+                  </div>
+                  <div class="form-field">
+                    <label for="email" class="mb-2 block text-sm">Email Address</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required />
+                    <p class="form-error" data-error="email"></p>
+                  </div>
+                </div>
+                <div class="form-field mt-2">
+                  <label for="subject" class="mb-2 block text-sm">Subject</label>
+                  <input id="subject" name="subject" type="text" required />
+                  <p class="form-error" data-error="subject"></p>
+                </div>
+                <div class="form-field mt-2">
+                  <label for="message" class="mb-2 block text-sm">Message</label>
+                  <textarea id="message" name="message" rows="6" required></textarea>
+                  <p class="form-error" data-error="message"></p>
+                </div>
+                <button id="form-submit" class="btn btn-gold mt-2" type="submit">
+                  <span id="btn-text">Send Message</span>
+                  <span id="btn-loading" class="hidden">
+                    <svg class="animate-spin h-4 w-4 inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending...
+                  </span>
+                </button>
+                <p id="form-status" class="form-status mt-3 text-sm text-muted" role="status"></p>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t border-line py-12">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="footer-rule mb-10"></div>
+          <div class="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+            <div>
+              <div class="flex items-center gap-3">
+                <span class="logo-mark">EM</span>
+                <span class="font-display font-semibold">Eke MartinFavour U.</span>
+              </div>
+              <p class="mt-3 max-w-md text-sm text-muted">Front-End Engineer | Forex Trader | CEO | Real Estate Consultant | Entrepreneur</p>
+              <p class="mt-2 text-gold">Built on Trust. Driven by Excellence.</p>
+            </div>
+            <nav class="flex flex-wrap gap-4 text-sm text-muted" aria-label="Footer">
+              <a href="#home" class="hover:text-gold">Home</a>
+              <a href="#about" class="hover:text-gold">About</a>
+              <a href="#services" class="hover:text-gold">Services</a>
+              <a href="#resume" class="hover:text-gold">Resume</a>
+              <a href="#portfolio" class="hover:text-gold">Portfolio</a>
+              <a href="#hire" class="hover:text-gold">Hire Me</a>
+            </nav>
+          </div>
+          <div class="mt-8 flex flex-wrap items-center justify-between gap-4 text-sm text-muted">
+            <a class="hover:text-gold" href="mailto:ekemartinudochukwu4@gmail.com">ekemartinudochukwu4@gmail.com</a>
+            <p>© <span data-year></span> Eke MartinFavour U. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <a id="to-top" class="to-top" href="#home" aria-label="Back to top">
+      <i data-lucide="chevron-up" class="h-5 w-5"></i>
+    </a>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
